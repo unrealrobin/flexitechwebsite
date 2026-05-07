@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pool Gallery &amp; Portfolio | Flexi Tech Contracting — Los Angeles</title>
+  <meta name="description" content="Browse Flexi Tech's portfolio of custom pools, spas, infinity pools, and outdoor living spaces built across Los Angeles and the San Fernando Valley." />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Gallery page styles */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 40px 0 52px;
+    }
+
+    .filter-btn {
+      padding: 9px 22px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .gallery-full {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-full-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+
+    .gallery-full-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    .gallery-full-item.tall { grid-row: span 2; aspect-ratio: auto; }
+
+    .gallery-full-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .gallery-full-item:hover img { transform: scale(1.06); }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,22,40,0.75) 0%, transparent 55%);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px 22px;
+    }
+
+    .gallery-full-item:hover .gallery-overlay { opacity: 1; }
+
+    .gallery-overlay-content { }
+
+    .gallery-overlay-content .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--teal);
+      border-radius: 50px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .gallery-overlay-content h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .gallery-overlay-content p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 3px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: var(--radius);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+    .lightbox-close:hover { opacity: 1; transform: rotate(90deg); }
+
+    @media (max-width: 900px) {
+      .gallery-full { grid-template-columns: repeat(2, 1fr); }
+      .gallery-full-item.wide { grid-column: span 1; aspect-ratio: 4/3; }
+      .gallery-full-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-full { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.png" class="nav-logo-img" alt="Flexi Tech Pool, Spa &amp; Waterproofing" />
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="tel:8186549077" class="nav-phone">
+            <i class="fa-solid fa-phone"></i> 818-654-9077
+          </a>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 22px; font-size:0.82rem;">
+            Free Estimate
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== PAGE HERO ====== -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('images/hero-gallery.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Gallery</span>
+        </div>
+        <h1>Our Portfolio</h1>
+        <p>200+ pools built across Los Angeles. Each one a custom creation, built with pride.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY ====== -->
+  <section class="section bg-white">
+    <div class="container">
+
+      <div class="text-center">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Built with Pride, Finished to Perfection</h2>
+        <p class="section-sub">
+          Every pool you see below was designed, engineered, and built by the Flexi Tech team.
+          When you're ready to see what we can do for your backyard, we'd love to chat.
+        </p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="pool">Custom Pools</button>
+        <button class="filter-btn" data-filter="spa">Spas &amp; Hot Tubs</button>
+        <button class="filter-btn" data-filter="infinity">Infinity Pools</button>
+        <button class="filter-btn" data-filter="remodel">Remodels</button>
+        <button class="filter-btn" data-filter="hardscape">Hardscape</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-full" id="galleryGrid">
+
+        <div class="gallery-full-item wide" data-cat="pool">
+          <img src="images/gallery/encino-pool-resort-style.jpg" alt="Resort-style pool with lounge area" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Custom Pool</span>
+              <h4>Resort-Style Backyard</h4>
+              <p>Encino, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item tall" data-cat="spa">
+          <img src="images/gallery/encino-spa-therapy-jets.jpg" alt="Luxury spa and hot tub" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Spa &amp; Hot Tub</span>
+              <h4>Custom In-Ground Spa</h4>
+              <p>Pacific Palisades, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="pool">
+          <img src="images/gallery/calabasas-pool-spa-combo.jpg" alt="Modern pool with palm trees" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Custom Pool</span>
+              <h4>Modern Tropical Pool</h4>
+              <p>Woodland Hills, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="hardscape">
+          <img src="images/gallery/tarzana-travertine-deck.jpg" alt="Pool deck and hardscape" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Hardscape</span>
+              <h4>Travertine Pool Deck</h4>
+              <p>Beverly Hills, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="infinity">
+          <img src="images/gallery/pacific-palisades-infinity-pool.jpg" alt="Infinity pool design" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Infinity Pool</span>
+              <h4>Zero-Edge Hilltop Pool</h4>
+              <p>Malibu, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="pool">
+          <img src="images/gallery/beverly-hills-luxury-pool.jpg" alt="Contemporary pool design" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Custom Pool</span>
+              <h4>Contemporary Geometric Pool</h4>
+              <p>Sherman Oaks, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item wide" data-cat="pool">
+          <img src="images/gallery/encino-pool-deck-lounge.jpg" alt="Large backyard pool" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Custom Pool</span>
+              <h4>Lagoon-Style Family Pool</h4>
+              <p>Tarzana, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="remodel">
+          <img src="images/gallery/sherman-oaks-pool-remodel-after.jpg" alt="Pool renovation" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Remodel</span>
+              <h4>Full Pool Renovation</h4>
+              <p>Chatsworth, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="spa">
+          <img src="images/gallery/calabasas-waterfall-feature.jpg" alt="Pool and spa at sunset" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Pool &amp; Spa</span>
+              <h4>Pool-Spa Combo at Sunset</h4>
+              <p>Calabasas, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="infinity">
+          <img src="images/gallery/encino-pool-night-lighting.jpg" alt="Pool at night with lighting" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Infinity Pool</span>
+              <h4>Illuminated Infinity Pool</h4>
+              <p>Hidden Hills, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="hardscape">
+          <img src="images/gallery/beverly-hills-patio-hardscape.jpg" alt="Modern pool with hardscape" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Hardscape</span>
+              <h4>Modern Pool &amp; Patio</h4>
+              <p>Northridge, CA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-cat="remodel">
+          <img src="images/gallery/chatsworth-pool-renovation.jpg" alt="Pool renovation after" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="tag">Remodel</span>
+              <h4>Tile &amp; Coping Renewal</h4>
+              <p>Reseda, CA</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== READY TO BUILD CTA ====== -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Love What You See? Let's Build Yours.</h2>
+      <p>Every pool in this gallery started with a free consultation. Yours can too.</p>
+      <div class="btn-actions">
+        <a href="contact.html" class="btn btn-dark">
+          <i class="fa-solid fa-clipboard-list"></i> Start My Project
+        </a>
+        <a href="tel:8186549077" class="btn btn-outline">
+          <i class="fa-solid fa-phone"></i> 818-654-9077
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" class="nav-logo-img" alt="Flexi Tech Pool, Spa &amp; Waterproofing" /><p>Building luxury pools and outdoor living spaces across Los Angeles and the San Fernando Valley since 1998. Licensed, bonded, and insured.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Houzz"><i class="fa-brands fa-houzz"></i></a>
+            <a href="#" aria-label="Yelp"><i class="fa-brands fa-yelp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">Custom Pool Construction</a></li>
+            <li><a href="services.html">Spas &amp; Hot Tubs</a></li>
+            <li><a href="services.html">Infinity Pools</a></li>
+            <li><a href="services.html">Pool Remodeling</a></li>
+            <li><a href="services.html">Water Features</a></li>
+            <li><a href="services.html">Hardscape &amp; Decking</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Service Areas</h5>
+          <ul>
+            <li><a href="hidden-hills-pool-builder.html">Hidden Hills</a></li>
+            <li><a href="calabasas-pool-builder.html">Calabasas</a></li>
+            <li><a href="pacific-palisades-pool-builder.html">Pacific Palisades</a></li>
+            <li><a href="beverly-hills-pool-builder.html">Beverly Hills</a></li>
+            <li><a href="encino-pool-builder.html">Encino</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:8186549077">818-654-9077</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@flexitechcontracting.com">info@flexitechcontracting.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>6924 Canby Ave, Los Angeles, CA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <span>© 2025 Flexi Tech Contracting Inc. All rights reserved.</span>
+          <div class="footer-badges">
+            <span class="footer-badge"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; Insured</span>
+            <span class="footer-badge"><i class="fa-solid fa-certificate"></i> Bonded Contractor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-phone">
+    <a href="tel:8186549077" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
+    <a href="contact.html" class="quote-btn"><i class="fa-solid fa-clipboard-list"></i> Free Quote</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script>
+    // Navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Gallery Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-full-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.dataset.cat === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const src = item.querySelector('img').src;
+        const alt = item.querySelector('img').alt;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  </script>
+
+</body>
+</html>

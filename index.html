@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexi Tech | Premier Pool Builder — Los Angeles & San Fernando Valley</title>
+  <meta name="description" content="Los Angeles's premier custom pool builder. Flexi Tech Contracting builds luxury swimming pools, spas, water features and outdoor living spaces across the San Fernando Valley. 25+ years, 200+ pools. Call 818-654-9077." />
+  <meta name="keywords" content="pool builder Los Angeles, custom pools San Fernando Valley, pool construction LA, spa builder Los Angeles, infinity pool builder" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Page-specific tweaks */
+    .home-intro { max-width: 680px; }
+    .gallery-cta { text-align: center; margin-top: 40px; }
+    .inline-form-section {
+      background: var(--sand-pale);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .inline-form-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .form-side-info h2 { margin-bottom: 16px; }
+    .form-side-info .section-sub { margin-bottom: 32px; }
+    .form-side-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .form-side-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-mid);
+    }
+    .form-side-badge i { color: var(--teal); }
+    @media (max-width: 900px) {
+      .inline-form-wrap { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo" aria-label="Flexi Tech Home">
+          <img src="images/logo.png" class="nav-logo-img" alt="Flexi Tech Pool, Spa &amp; Waterproofing" />
+        </a>
+
+        <!-- Desktop Links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Right Side -->
+        <div class="nav-right">
+          <a href="tel:8186549077" class="nav-phone">
+            <i class="fa-solid fa-phone"></i>
+            818-654-9077
+          </a>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 22px; font-size:0.82rem;">
+            Free Estimate
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Los Angeles &amp; San Fernando Valley</div>
+        <h1>
+          Building <em>Luxury Pools</em><br/>
+          That Last a Lifetime
+        </h1>
+        <p class="hero-desc">
+          Family-owned since 1998. Over 200 custom pools built across Los Angeles —
+          from sleek infinity pools to resort-style backyards with spas, waterfalls, and stunning hardscapes.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
+            <i class="fa-solid fa-clipboard-list"></i>
+            Get a Free Estimate
+          </a>
+          <a href="gallery.html" class="btn btn-outline">
+            <i class="fa-regular fa-images"></i>
+            View Our Work
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ====== TRUST BAR ====== -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="trust-text">
+            <strong>25+ Years</strong>
+            <span>In Business</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-water-ladder"></i></div>
+          <div class="trust-text">
+            <strong>200+ Pools</strong>
+            <span>Built &amp; Delivered</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="trust-text">
+            <strong>Licensed &amp; Insured</strong>
+            <span>Bonded Contractor</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-tag"></i></div>
+          <div class="trust-text">
+            <strong>Free Estimates</strong>
+            <span>No Obligation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== ABOUT INTRO ====== -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="two-col">
+        <!-- Image Side -->
+        <div class="about-img-wrap">
+          <img
+            src="images/about-team.jpg"
+            alt="Luxury pool built by Flexi Tech in Los Angeles"
+            loading="lazy"
+          />
+          <div class="about-badge">
+            <span class="num">1998</span>
+            <span class="lbl">Est. — Family Owned</span>
+          </div>
+        </div>
+        <!-- Text Side -->
+        <div class="about-text">
+          <span class="section-label">About Flexi Tech</span>
+          <h2 class="section-title">Los Angeles's Trusted Pool Builders</h2>
+          <p class="section-sub">
+            Founded by Ken and Varda Lifshitz, Flexi Tech Contracting has been transforming
+            backyards across Los Angeles and the San Fernando Valley for over 25 years.
+            We manage everything in-house — from design and permits to final tile and finish —
+            so your project runs smoothly from day one to the day you dive in.
+          </p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-circle-check"></i> Fully in-house design, engineering &amp; construction</li>
+            <li><i class="fa-solid fa-circle-check"></i> Transparent pricing with detailed written estimates</li>
+            <li><i class="fa-solid fa-circle-check"></i> Consistent project updates every step of the way</li>
+            <li><i class="fa-solid fa-circle-check"></i> Serving Beverly Hills, Encino, Pacific Palisades, Woodland Hills &amp; beyond</li>
+          </ul>
+          <a href="services.html" class="btn btn-dark">
+            Explore Our Services <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="section bg-sand-pale">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">What We Build</span>
+        <h2 class="section-title">Full-Service Pool Construction</h2>
+        <p class="section-sub">
+          From initial design to the final finish, we handle every aspect of your project
+          with craftsmanship and care.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-water-ladder"></i></div>
+          <h3>Custom Pool Construction</h3>
+          <p>
+            Fully bespoke pool designs tailored to your property, lifestyle, and budget.
+            We handle excavation, plumbing, shotcrete, tile, coping, and premium finishes.
+          </p>
+          <a href="services.html" class="card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-hot-tub-person"></i></div>
+          <h3>Spas &amp; Hot Tubs</h3>
+          <p>
+            Custom-built spas and jetted jacuzzis, designed to complement your pool or
+            stand alone as a luxurious backyard retreat.
+          </p>
+          <a href="services.html" class="card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-infinity"></i></div>
+          <h3>Infinity &amp; Zero-Edge Pools</h3>
+          <p>
+            Specialists in dramatic zero-edge and infinity pool designs that create a
+            seamless visual connection with the horizon or surrounding landscape.
+          </p>
+          <a href="services.html" class="card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-paintbrush"></i></div>
+          <h3>Pool Remodeling &amp; Renovation</h3>
+          <p>
+            Breathe new life into an aging pool. We replace finishes, coping, tile,
+            equipment, and lighting to bring it up to modern standards.
+          </p>
+          <a href="services.html" class="card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+          <h3>Water Features &amp; Fountains</h3>
+          <p>
+            Waterfalls, grottos, bubblers, and custom fountain features that elevate your
+            backyard into a full resort experience.
+          </p>
+          <a href="services.html" class="card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-bricks"></i></div>
+          <h3>Decking &amp; Hardscape</h3>
+          <p>
+            Custom pool decks, patios, outdoor kitchens, and hardscape designs that
+            complete the look and function of your outdoor living space.
+          </p>
+          <a href="services.html" class="card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA STRIP ====== -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Ready to Build the Backyard of Your Dreams?</h2>
+      <p>Schedule a free consultation with Ken and our team. No pressure, no obligation.</p>
+      <div class="btn-actions">
+        <a href="contact.html" class="btn btn-dark">
+          <i class="fa-solid fa-clipboard-list"></i> Get My Free Estimate
+        </a>
+        <a href="tel:8186549077" class="btn btn-outline">
+          <i class="fa-solid fa-phone"></i> Call 818-654-9077
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY PREVIEW ====== -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Our Portfolio</span>
+        <h2 class="section-title">Built with Pride, Finished to Perfection</h2>
+        <p class="section-sub">
+          Every pool we build is a one-of-a-kind creation. Browse a selection of our recent work.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item span-2">
+          <img src="images/gallery/encino-pool-resort-style.jpg" alt="Luxury pool aerial view" loading="lazy" />
+          <div class="gallery-item-overlay"><span>Resort-Style Pool</span></div>
+        </div>
+        <div class="gallery-item tall">
+          <img src="images/gallery/encino-pool-deck-lounge.jpg" alt="Pool with lounge area" loading="lazy" />
+          <div class="gallery-item-overlay"><span>Modern Pool &amp; Deck</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/beverly-hills-luxury-pool.jpg" alt="Sleek modern pool" loading="lazy" />
+          <div class="gallery-item-overlay"><span>Contemporary Design</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/encino-spa-therapy-jets.jpg" alt="Spa and hot tub" loading="lazy" />
+          <div class="gallery-item-overlay"><span>Custom Spa</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/encino-pool-night-lighting.jpg" alt="Pool at sunset" loading="lazy" />
+          <div class="gallery-item-overlay"><span>Sunset Pool</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-cta">
+        <a href="gallery.html" class="btn btn-dark">
+          <i class="fa-regular fa-images"></i> View Full Gallery
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHY CHOOSE US ====== -->
+  <section class="section bg-sand-pale">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Why Flexi Tech</span>
+        <h2 class="section-title">The Flexi Tech Difference</h2>
+        <p class="section-sub">
+          We don't just build pools — we build relationships, and our craftsmanship speaks for itself.
+        </p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h4>Owner Involvement</h4>
+          <p>Ken personally oversees every project. You get direct access to the owner, not a sales rep.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-drafting-compass"></i></div>
+          <h4>Custom Designs</h4>
+          <p>No cookie-cutter pools. Every build is uniquely designed around your space and vision.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h4>On-Time Delivery</h4>
+          <p>We set realistic timelines and keep you updated at every phase of your project.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-star"></i></div>
+          <h4>Premium Finishes</h4>
+          <p>From Pebble Tec plaster to hand-laid tile and coping, we never cut corners on quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== OUR PROCESS ====== -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Your Pool, From Vision to Reality</h2>
+        <p class="section-sub">A clear, guided process so you always know what comes next.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h4>Free Consultation</h4>
+          <p>We visit your property, listen to your vision, and discuss budget and timeline options.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h4>Design &amp; Estimate</h4>
+          <p>You receive a detailed design plan and transparent written estimate — no surprises.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h4>Permits &amp; Engineering</h4>
+          <p>We handle all permits, engineering drawings, and city approvals on your behalf.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h4>Construction</h4>
+          <p>Our crew gets to work — you receive progress updates throughout the 2–4 month build.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">5</div>
+          <h4>Final Walkthrough</h4>
+          <p>We complete a full inspection and walkthrough together before you take the first swim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="section bg-sand-pale">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Client Reviews</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "Ken and his team exceeded every expectation. They built us a stunning infinity pool
+            with a spa and water feature — the whole neighborhood wants to know who did it.
+            The process was smooth, transparent, and worth every penny."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div class="author-info">
+              <strong>Michael R.</strong>
+              <span>Encino, CA</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "After getting quotes from three other companies, Flexi Tech was the only one that
+            felt like they actually cared about our project. Ken walked us through every step.
+            The pool looks incredible — exactly what we envisioned."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">SL</div>
+            <div class="author-info">
+              <strong>Sarah &amp; David L.</strong>
+              <span>Pacific Palisades, CA</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "Our backyard was a blank slate. Flexi Tech turned it into a resort. Pool, spa, deck,
+            outdoor firepit — all perfectly integrated. Quality is unmatched and they finished
+            on schedule. Already referring friends."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JK</div>
+            <div class="author-info">
+              <strong>James K.</strong>
+              <span>Woodland Hills, CA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== INLINE QUOTE FORM ====== -->
+  <section class="section inline-form-section">
+    <div class="container">
+      <div class="inline-form-wrap">
+        <!-- Info Side -->
+        <div class="form-side-info">
+          <span class="section-label">Get Started Today</span>
+          <h2 class="section-title">Request Your Free Estimate</h2>
+          <p class="section-sub">
+            Fill out the form and one of our team members will be in touch within one business day
+            to discuss your project and schedule a free on-site consultation.
+          </p>
+          <div class="form-side-badges">
+            <div class="form-side-badge"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; Insured</div>
+            <div class="form-side-badge"><i class="fa-solid fa-phone"></i> 818-654-9077</div>
+            <div class="form-side-badge"><i class="fa-solid fa-clock"></i> Responds Within 24 hrs</div>
+            <div class="form-side-badge"><i class="fa-solid fa-tag"></i> 100% Free Estimate</div>
+          </div>
+        </div>
+
+        <!-- Form Side -->
+        <div class="contact-form-wrap">
+          <form name="home-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
+            <input type="hidden" name="form-name" value="home-quote" />
+            <input type="hidden" name="bot-field" style="display:none" />
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="john@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(818) 555-0100" required />
+              </div>
+              <div class="form-group full">
+                <label for="service">Service Interested In</label>
+                <select id="service" name="service">
+                  <option value="">— Select a service —</option>
+                  <option>New Pool Construction</option>
+                  <option>Pool &amp; Spa Combo</option>
+                  <option>Infinity / Zero-Edge Pool</option>
+                  <option>Pool Remodel / Renovation</option>
+                  <option>Water Features &amp; Fountains</option>
+                  <option>Decking &amp; Hardscape</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="message">Tell Us About Your Project</label>
+                <textarea id="message" name="message" placeholder="Describe your vision, backyard size, budget range, or any questions you have..."></textarea>
+              </div>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px;">
+                <i class="fa-solid fa-paper-plane"></i> Send My Request
+              </button>
+              <p class="form-note">
+                <i class="fa-solid fa-lock"></i>
+                Your information is private and will never be shared.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="images/logo.png" class="nav-logo-img" alt="Flexi Tech Pool, Spa &amp; Waterproofing" /><p>
+            Building luxury pools and outdoor living spaces across Los Angeles
+            and the San Fernando Valley since 1998. Licensed, bonded, and insured.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Houzz"><i class="fa-brands fa-houzz"></i></a>
+            <a href="#" aria-label="Yelp"><i class="fa-brands fa-yelp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">Custom Pool Construction</a></li>
+            <li><a href="services.html">Spas &amp; Hot Tubs</a></li>
+            <li><a href="services.html">Infinity Pools</a></li>
+            <li><a href="services.html">Pool Remodeling</a></li>
+            <li><a href="services.html">Water Features</a></li>
+            <li><a href="services.html">Hardscape &amp; Decking</a></li>
+          </ul>
+        </div>
+
+        <!-- Service Areas -->
+        <div class="footer-col">
+          <h5>Service Areas</h5>
+          <ul>
+            <li><a href="hidden-hills-pool-builder.html">Hidden Hills</a></li>
+            <li><a href="calabasas-pool-builder.html">Calabasas</a></li>
+            <li><a href="pacific-palisades-pool-builder.html">Pacific Palisades</a></li>
+            <li><a href="beverly-hills-pool-builder.html">Beverly Hills</a></li>
+            <li><a href="encino-pool-builder.html">Encino</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:8186549077">818-654-9077</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@flexitechcontracting.com">info@flexitechcontracting.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>6924 Canby Ave<br/>Los Angeles, CA</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon–Fri: 8am – 6pm<br/>Sat: 9am – 3pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <span>© 2025 Flexi Tech Contracting Inc. All rights reserved.</span>
+          <div class="footer-badges">
+            <span class="footer-badge"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; Insured</span>
+            <span class="footer-badge"><i class="fa-solid fa-certificate"></i> Bonded Contractor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== STICKY MOBILE BAR ====== -->
+  <div class="sticky-phone">
+    <a href="tel:8186549077" class="call-btn">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="contact.html" class="quote-btn">
+      <i class="fa-solid fa-clipboard-list"></i> Free Quote
+    </a>
+  </div>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+
+    // Hero image load effect
+    const heroBg = document.getElementById('heroBg');
+    const img = new Image();
+    img.onload = () => heroBg.classList.add('loaded');
+    img.src = heroBg.style.backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/, '$1');
+  </script>
+
+</body>
+</html>

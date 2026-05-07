@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Free Pool Estimate | Flexi Tech Contracting — Los Angeles</title>
+  <meta name="description" content="Request a free, no-obligation pool estimate from Flexi Tech Contracting. Serving Los Angeles, Encino, Woodland Hills, Pacific Palisades, and the San Fernando Valley. Call 818-654-9077." />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Info Panel */
+    .contact-info-panel {
+      position: sticky;
+      top: 104px;
+    }
+
+    .contact-info-panel h2 { margin-bottom: 14px; }
+    .contact-info-panel .section-sub { margin-bottom: 36px; }
+
+    .info-cards { display: flex; flex-direction: column; gap: 18px; }
+
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 22px;
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+
+    .info-card:hover {
+      border-color: var(--teal);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-card-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--teal-glow);
+      border: 1px solid rgba(61,212,218,0.25);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal-dark);
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+
+    .info-card-text strong {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
+
+    .info-card-text a,
+    .info-card-text span {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      transition: var(--transition);
+    }
+
+    .info-card-text a:hover { color: var(--teal); }
+
+    .service-areas {
+      margin-top: 36px;
+      padding: 24px;
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+    }
+
+    .service-areas h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 14px;
+    }
+
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .area-tag {
+      padding: 5px 12px;
+      background: rgba(61,212,218,0.1);
+      border: 1px solid rgba(61,212,218,0.2);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    /* Full Quote Form */
+    .quote-form-panel .contact-form-wrap {
+      padding: 48px;
+    }
+
+    .form-section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--teal-dark);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .form-section { margin-bottom: 32px; }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .radio-option {
+      position: relative;
+    }
+
+    .radio-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .radio-option label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: var(--transition);
+      background: var(--sand-pale);
+    }
+
+    .radio-option label:hover {
+      border-color: var(--teal);
+      color: var(--teal-dark);
+    }
+
+    .radio-option input[type="radio"]:checked + label {
+      border-color: var(--teal);
+      background: var(--teal-glow);
+      color: var(--teal-dark);
+      font-weight: 600;
+    }
+
+    .budget-options { gap: 10px; }
+
+    /* Map embed */
+    .map-wrap {
+      margin-top: 64px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      display: block;
+    }
+
+    @media (max-width: 1000px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .contact-info-panel { position: static; }
+      .quote-form-panel .contact-form-wrap { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.png" class="nav-logo-img" alt="Flexi Tech Pool, Spa &amp; Waterproofing" />
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="tel:8186549077" class="nav-phone">
+            <i class="fa-solid fa-phone"></i> 818-654-9077
+          </a>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 22px; font-size:0.82rem;">
+            Free Estimate
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== PAGE HERO ====== -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('images/hero-contact.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Contact</span>
+        </div>
+        <h1>Get Your Free Estimate</h1>
+        <p>No pressure. No obligation. Just an honest conversation about your project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT MAIN ====== -->
+  <section class="section bg-sand-pale">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- LEFT — Info Panel -->
+        <div class="contact-info-panel">
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title">Let's Talk About Your Project</h2>
+          <p class="section-sub">
+            Fill out the form and we'll be in touch within one business day to schedule your
+            free on-site consultation with Ken.
+          </p>
+
+          <div class="info-cards">
+            <a href="tel:8186549077" class="info-card" style="text-decoration:none;">
+              <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="info-card-text">
+                <strong>Call or Text Us</strong>
+                <span>818-654-9077</span>
+              </div>
+            </a>
+            <a href="mailto:info@flexitechcontracting.com" class="info-card" style="text-decoration:none;">
+              <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="info-card-text">
+                <strong>Email Us</strong>
+                <span>info@flexitechcontracting.com</span>
+              </div>
+            </a>
+            <div class="info-card">
+              <div class="info-card-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="info-card-text">
+                <strong>Office Hours</strong>
+                <span>Mon–Fri: 8am – 6pm &nbsp;|&nbsp; Sat: 9am – 3pm</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-card-text">
+                <strong>Office Location</strong>
+                <span>6924 Canby Ave, Los Angeles, CA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Areas -->
+          <div class="service-areas">
+            <h4>Areas We Serve</h4>
+            <div class="area-tags">
+              <span class="area-tag">Los Angeles</span>
+              <span class="area-tag">Encino</span>
+              <span class="area-tag">Woodland Hills</span>
+              <span class="area-tag">Pacific Palisades</span>
+              <span class="area-tag">Beverly Hills</span>
+              <span class="area-tag">Sherman Oaks</span>
+              <span class="area-tag">Tarzana</span>
+              <span class="area-tag">Calabasas</span>
+              <span class="area-tag">Chatsworth</span>
+              <span class="area-tag">Northridge</span>
+              <span class="area-tag">Malibu</span>
+              <span class="area-tag">Hidden Hills</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT — Full Form -->
+        <div class="quote-form-panel">
+          <div class="contact-form-wrap">
+            <form name="quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="quoteForm">
+              <input type="hidden" name="form-name" value="quote" />
+              <input type="hidden" name="bot-field" style="display:none" />
+
+              <!-- Contact Info -->
+              <div class="form-section">
+                <div class="form-section-title">Your Information</div>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="John" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(818) 555-0100" required />
+                  </div>
+                  <div class="form-group full">
+                    <label for="address">Property Address</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main St, Encino, CA 91316" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Type -->
+              <div class="form-section">
+                <div class="form-section-title">Project Type</div>
+                <div class="radio-group">
+                  <div class="radio-option">
+                    <input type="radio" name="projectType" id="pt-new" value="New Pool Construction" />
+                    <label for="pt-new"><i class="fa-solid fa-water-ladder"></i> New Pool</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="projectType" id="pt-spa" value="Spa / Hot Tub" />
+                    <label for="pt-spa"><i class="fa-solid fa-hot-tub-person"></i> Spa / Hot Tub</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="projectType" id="pt-combo" value="Pool + Spa Combo" />
+                    <label for="pt-combo"><i class="fa-solid fa-droplet"></i> Pool + Spa</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="projectType" id="pt-infinity" value="Infinity / Zero-Edge Pool" />
+                    <label for="pt-infinity"><i class="fa-solid fa-infinity"></i> Infinity Pool</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="projectType" id="pt-remodel" value="Pool Remodel / Renovation" />
+                    <label for="pt-remodel"><i class="fa-solid fa-paintbrush"></i> Remodel</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="projectType" id="pt-hardscape" value="Decking / Hardscape" />
+                    <label for="pt-hardscape"><i class="fa-solid fa-bricks"></i> Hardscape</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="projectType" id="pt-water" value="Water Features" />
+                    <label for="pt-water"><i class="fa-solid fa-water"></i> Water Features</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="projectType" id="pt-other" value="Not Sure / Multiple" />
+                    <label for="pt-other"><i class="fa-solid fa-circle-question"></i> Not Sure</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Budget Range -->
+              <div class="form-section">
+                <div class="form-section-title">Approximate Budget Range</div>
+                <div class="radio-group budget-options">
+                  <div class="radio-option">
+                    <input type="radio" name="budget" id="b1" value="Under $60K" />
+                    <label for="b1">Under $60K</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="budget" id="b2" value="$60K – $100K" />
+                    <label for="b2">$60K – $100K</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="budget" id="b3" value="$100K – $150K" />
+                    <label for="b3">$100K – $150K</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="budget" id="b4" value="$150K+" />
+                    <label for="b4">$150K+</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" name="budget" id="b5" value="Not Sure" />
+                    <label for="b5">Not Sure Yet</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline & Contact Pref -->
+              <div class="form-section">
+                <div class="form-section-title">Timeline &amp; Preferences</div>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="timeline">Project Timeline</label>
+                    <select id="timeline" name="timeline">
+                      <option value="">— When are you looking to start? —</option>
+                      <option>As soon as possible</option>
+                      <option>Within 1–3 months</option>
+                      <option>Within 3–6 months</option>
+                      <option>6–12 months from now</option>
+                      <option>Just researching for now</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactPref">Preferred Contact Method</label>
+                    <select id="contactPref" name="contactPref">
+                      <option value="">— How should we reach you? —</option>
+                      <option>Phone Call</option>
+                      <option>Text Message</option>
+                      <option>Email</option>
+                      <option>Any of the above</option>
+                    </select>
+                  </div>
+                  <div class="form-group full">
+                    <label for="message">Tell Us About Your Project *</label>
+                    <textarea id="message" name="message" placeholder="Describe your vision — backyard size, style you love, must-haves, any concerns. The more you share, the better we can prepare for our consultation." required></textarea>
+                  </div>
+                  <div class="form-group full">
+                    <label for="howHear">How Did You Hear About Us?</label>
+                    <select id="howHear" name="howHear">
+                      <option value="">— Select one —</option>
+                      <option>Google Search</option>
+                      <option>Yelp</option>
+                      <option>Houzz</option>
+                      <option>Facebook / Instagram</option>
+                      <option>Neighbor or Friend Referral</option>
+                      <option>Drive By / Yard Sign</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit -->
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:18px; font-size:1rem;">
+                  <i class="fa-solid fa-paper-plane"></i> Submit My Request
+                </button>
+                <p class="form-note" style="margin-top:14px;">
+                  <i class="fa-solid fa-lock"></i>
+                  100% free and no obligation. We respond within one business day.
+                </p>
+              </div>
+
+            </form>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="successMsg" style="display:none; text-align:center; padding:32px 0;">
+              <div style="width:64px; height:64px; background:var(--teal-glow); border:2px solid var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:1.8rem; color:var(--teal);">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <h3 style="font-size:1.5rem; margin-bottom:10px;">We Got Your Request!</h3>
+              <p style="color:var(--text-mid); max-width:380px; margin:0 auto 24px;">
+                Thank you! A member of our team will be in touch within one business day
+                to schedule your free consultation.
+              </p>
+              <a href="tel:8186549077" class="btn btn-primary">
+                <i class="fa-solid fa-phone"></i> Call Us Now: 818-654-9077
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Map -->
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=6924+Canby+Ave+Los+Angeles+CA&output=embed&z=15"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Flexi Tech Contracting Location">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== TRUST BOTTOM ====== -->
+  <section class="section-sm bg-white">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h4>Fast Response</h4>
+          <p>We respond to every inquiry within one business day and can often schedule a site visit the same week.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <h4>Transparent Pricing</h4>
+          <p>Your estimate will be detailed, itemized, and written — no vague ballparks or surprise add-ons later.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h4>No Pressure, Ever</h4>
+          <p>Our consultation is a conversation, not a sales pitch. Take your time — we'll be here when you're ready.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4>Licensed &amp; Bonded</h4>
+          <p>Fully licensed, bonded, and insured in the State of California. You're in safe, professional hands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" class="nav-logo-img" alt="Flexi Tech Pool, Spa &amp; Waterproofing" /><p>Building luxury pools and outdoor living spaces across Los Angeles and the San Fernando Valley since 1998. Licensed, bonded, and insured.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Houzz"><i class="fa-brands fa-houzz"></i></a>
+            <a href="#" aria-label="Yelp"><i class="fa-brands fa-yelp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">Custom Pool Construction</a></li>
+            <li><a href="services.html">Spas &amp; Hot Tubs</a></li>
+            <li><a href="services.html">Infinity Pools</a></li>
+            <li><a href="services.html">Pool Remodeling</a></li>
+            <li><a href="services.html">Water Features</a></li>
+            <li><a href="services.html">Hardscape &amp; Decking</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Service Areas</h5>
+          <ul>
+            <li><a href="hidden-hills-pool-builder.html">Hidden Hills</a></li>
+            <li><a href="calabasas-pool-builder.html">Calabasas</a></li>
+            <li><a href="pacific-palisades-pool-builder.html">Pacific Palisades</a></li>
+            <li><a href="beverly-hills-pool-builder.html">Beverly Hills</a></li>
+            <li><a href="encino-pool-builder.html">Encino</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:8186549077">818-654-9077</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@flexitechcontracting.com">info@flexitechcontracting.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>6924 Canby Ave, Los Angeles, CA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <span>© 2025 Flexi Tech Contracting Inc. All rights reserved.</span>
+          <div class="footer-badges">
+            <span class="footer-badge"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; Insured</span>
+            <span class="footer-badge"><i class="fa-solid fa-certificate"></i> Bonded Contractor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-phone">
+    <a href="tel:8186549077" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
+    <a href="contact.html" class="quote-btn"><i class="fa-solid fa-clipboard-list"></i> Free Quote</a>
+  </div>
+
+  <script>
+    // Navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Form submission (Netlify Forms AJAX)
+    const form = document.getElementById('quoteForm');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+        btn.disabled = true;
+
+        try {
+          const formData = new FormData(form);
+          const body = new URLSearchParams(formData).toString();
+
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body
+          });
+
+          if (response.ok) {
+            form.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+          } else {
+            btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit My Request';
+            btn.disabled = false;
+            alert('There was an issue submitting the form. Please call us at 818-654-9077.');
+          }
+        } catch (err) {
+          btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit My Request';
+          btn.disabled = false;
+          alert('There was an issue submitting the form. Please call us at 818-654-9077.');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
