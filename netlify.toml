@@ -21,7 +21,52 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
-# Clean URLs — remove .html extension
+# ============================================================
+# URL CANONICALIZATION
+#
+# This file is the SINGLE source of truth for redirects. Do not
+# add a _redirects file alongside it — when both exist the rules
+# are merged and the precedence is easy to get wrong.
+#
+# Canonical form for this site is:
+#     https://www.flexitechcontracting.com/<page>     (www, no .html)
+#
+# That matches every <link rel="canonical"> in the HTML, every
+# <loc> in sitemap.xml, and the Sitemap: line in robots.txt.
+# If you ever switch to the bare apex domain, all four have to
+# change together or the canonical signals contradict each other.
+#
+# Netlify processes rules top to bottom; first match wins.
+# ============================================================
+
+# ---- 1. Host canonicalization: apex -> www ----
+# Netlify's domain settings usually handle this, but declaring it
+# explicitly keeps the behavior stable if the site config changes.
+[[redirects]]
+  from = "https://flexitechcontracting.com/*"
+  to = "https://www.flexitechcontracting.com/:splat"
+  status = 301
+  force = true
+
+# ---- 2. Recover dead legacy slug ----
+# Reported as still sitting in Google's index from an older version
+# of the site. Harmless if it was never indexed; recovers the link
+# equity if it was. Verify in Search Console > Page Indexing.
+[[redirects]]
+  from = "/hidden-hills-pool-builder-custom-pools-spas"
+  to = "/hidden-hills-pool-builder"
+  status = 301
+
+# ---- 3. Strip .html so only the clean URL is servable ----
+# Netlify serves /services from services.html automatically; these
+# rules make the .html form 301 to the clean form so the two don't
+# both resolve as duplicate content.
+#
+# These are enumerated per page rather than written as a single
+# "/*.html" wildcard: Netlify's splat matching is only reliable at
+# the END of a path, so a mid-path "*.html" pattern is not
+# dependable. Add a line here whenever you add a page.
+
 [[redirects]]
   from = "/index.html"
   to = "/"
@@ -40,4 +85,95 @@
 [[redirects]]
   from = "/contact.html"
   to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/service-areas.html"
+  to = "/service-areas"
+  status = 301
+
+[[redirects]]
+  from = "/pool-cost-guide.html"
+  to = "/pool-cost-guide"
+  status = 301
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you"
+  status = 301
+
+# ---- Location pages ----
+[[redirects]]
+  from = "/bel-air-pool-builder.html"
+  to = "/bel-air-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/beverly-hills-pool-builder.html"
+  to = "/beverly-hills-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/brentwood-pool-builder.html"
+  to = "/brentwood-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/calabasas-pool-builder.html"
+  to = "/calabasas-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/cheviot-hills-pool-builder.html"
+  to = "/cheviot-hills-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/encino-pool-builder.html"
+  to = "/encino-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/hancock-park-pool-builder.html"
+  to = "/hancock-park-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/hidden-hills-pool-builder.html"
+  to = "/hidden-hills-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/larchmont-pool-builder.html"
+  to = "/larchmont-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/los-feliz-pool-builder.html"
+  to = "/los-feliz-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/pacific-palisades-pool-builder.html"
+  to = "/pacific-palisades-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/sherman-oaks-pool-builder.html"
+  to = "/sherman-oaks-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/studio-city-pool-builder.html"
+  to = "/studio-city-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/venice-pool-builder.html"
+  to = "/venice-pool-builder"
+  status = 301
+
+[[redirects]]
+  from = "/westwood-pool-builder.html"
+  to = "/westwood-pool-builder"
   status = 301

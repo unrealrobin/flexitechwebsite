@@ -1281,3 +1281,153 @@ h1, h2, h3, h4 {
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .btn { width: 100%; justify-content: center; }
 }
+
+/* ============================================================
+   SB7 / SEO ADDITIONS — hero problem-CTA, low-commitment link,
+   proof strip, and FAQ accordion (lighter, non-card style)
+   ============================================================ */
+
+/* ---- Hero: transitional CTA + social proof strip ---- */
+.hero-secondary-cta { margin-top: 18px; }
+
+.hero-lowcommit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.hero-lowcommit-link:hover { color: var(--white); }
+.hero-lowcommit-link i { font-size: 0.8rem; }
+
+.hero-proof-strip {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+}
+/* reuses the existing .stars rule (color: var(--sand)) above —
+   only adding spacing here for this context */
+.hero-proof-strip .stars { margin-bottom: 0; }
+
+/* ---- FAQ accordion (lighter look — no card shadows/backgrounds) ---- */
+.faq-list { max-width: 760px; margin: 0 auto; }
+
+.faq-item {
+  border-bottom: 1px solid var(--border-light);
+  padding: 22px 4px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--text-dark);
+  list-style: none;
+  position: relative;
+  padding-right: 32px;
+  transition: var(--transition);
+}
+.faq-item summary:hover { color: var(--teal-dark); }
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: -2px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--teal);
+  transition: transform 0.25s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+
+.faq-item p {
+  margin-top: 14px;
+  color: var(--text-mid);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+/* ---- Service Areas (internal-link section, homepage) ---- */
+.service-areas-section .areas-title,
+.service-areas-section .section-label {
+  color: var(--white);
+}
+.service-areas-section .areas-sub {
+  color: rgba(255,255,255,0.65);
+}
+
+.area-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 44px;
+}
+
+.area-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1.5px solid rgba(61,212,218,0.3);
+  border-radius: 50px;
+  background: rgba(61,212,218,0.06);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.area-chip i { color: var(--teal); font-size: 0.8rem; }
+
+.area-chip:hover {
+  background: var(--teal);
+  color: var(--navy);
+  border-color: var(--teal);
+  transform: translateY(-2px);
+}
+.area-chip:hover i { color: var(--navy); }
+
+.area-chip-more {
+  background: var(--teal);
+  color: var(--navy);
+  border-color: var(--teal);
+  font-weight: 600;
+}
+.area-chip-more:hover {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+  color: var(--navy);
+}
+
+/* ---- Form urgency note (honest seasonal note, not fake scarcity) ---- */
+.form-urgency-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: var(--sand-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  max-width: 460px;
+}
+.form-urgency-note i {
+  color: var(--sand);
+  margin-top: 2px;
+  flex-shrink: 0;
+}

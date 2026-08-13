@@ -9,25 +9,31 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/services.html</loc>
+    <loc>https://www.flexitechcontracting.com/services</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/gallery.html</loc>
+    <loc>https://www.flexitechcontracting.com/gallery</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/contact.html</loc>
+    <loc>https://www.flexitechcontracting.com/contact</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/service-areas.html</loc>
+    <loc>https://www.flexitechcontracting.com/pool-cost-guide</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.flexitechcontracting.com/service-areas</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -35,91 +41,91 @@
 
   <!-- Location Pages -->
   <url>
-    <loc>https://www.flexitechcontracting.com/hidden-hills-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/hidden-hills-pool-builder</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/calabasas-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/calabasas-pool-builder</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/pacific-palisades-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/pacific-palisades-pool-builder</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/beverly-hills-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/beverly-hills-pool-builder</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/encino-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/encino-pool-builder</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/bel-air-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/bel-air-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/brentwood-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/brentwood-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/hancock-park-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/hancock-park-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/larchmont-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/larchmont-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/cheviot-hills-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/cheviot-hills-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/los-feliz-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/los-feliz-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/venice-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/venice-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/studio-city-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/studio-city-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/sherman-oaks-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/sherman-oaks-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.flexitechcontracting.com/westwood-pool-builder.html</loc>
+    <loc>https://www.flexitechcontracting.com/westwood-pool-builder</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
